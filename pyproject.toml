@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coacheck"
+version = "0.1.0"
+description = "Check supplier Certificates of Analysis against material specifications, and escalate rather than guess."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Shivani Krishnama" }]
+keywords = ["certificate of analysis", "coa", "quality", "manufacturing", "specification"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Manufacturing",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = ["PyYAML>=6.0"]
+
+[project.optional-dependencies]
+pdf = ["pdfplumber>=0.10"]
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.4", "mypy>=1.8", "pdfplumber>=0.10"]
+
+[project.urls]
+Homepage = "https://github.com/shivanireddyk/coacheck"
+Issues = "https://github.com/shivanireddyk/coacheck/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+# The rule set is stated explicitly rather than left to ruff's defaults.
+# Defaults change between releases, and CI installing a newer ruff and going
+# red on a rule that did not exist when the code was written is noise, not a
+# finding.
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src/coacheck"]
