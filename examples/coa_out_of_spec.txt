@@ -1,0 +1,12 @@
+CERTIFICATE OF ANALYSIS
+
+Product: Ascorbic Acid USP
+Lot Number: AA-2024-0532
+
+TEST                          RESULT              SPECIFICATION
+Appearance                    White powder        White crystalline powder
+Assay                         99.4 %              98.0 - 102.0 %
+Loss on Drying                0.62 %              NMT 0.5 %
+Lead                          0.08 ppm            NMT 0.5 ppm
+Arsenic                       Not detected        NMT 0.2 ppm
+Total Plate Count             240 cfu/g           NMT 1000 cfu/g
