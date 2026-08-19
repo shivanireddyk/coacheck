@@ -1,0 +1,44 @@
+# Ascorbic Acid USP, incoming material acceptance criteria.
+#
+# This file is the spec. Changing a limit is an edit here, reviewed like any
+# other document change. It is not a code change and it does not need a deploy.
+#
+# Limits are written as strings so the value in the file is the value used in
+# the comparison. Writing 0.5 instead of "0.5" is rejected on load.
+
+material: Ascorbic Acid USP
+supplier: Any
+
+specs:
+  - field: assay
+    unit: percent
+    min: "98.0"
+    max: "102.0"
+    aliases: ["assay (as C6H8O6)", "potency", "purity"]
+
+  - field: moisture
+    unit: percent
+    max: "0.5"
+    aliases: ["loss on drying", "water content", "karl fischer"]
+
+  - field: lead
+    unit: ppm
+    max: "0.5"
+    aliases: ["pb"]
+
+  # Deliberately no "As" alias. A two-letter alias matched on a word boundary
+  # hits ordinary English in the document header and would extract a date as
+  # an arsenic result. Short aliases are a correctness risk, not a convenience.
+  - field: arsenic
+    unit: ppm
+    max: "0.2"
+
+  - field: total plate count
+    unit: cfu/g
+    max: "1000"
+    aliases: ["total aerobic microbial count", "tamc"]
+
+  - field: residual solvents
+    unit: ppm
+    max: "50"
+    required: false
